@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Fredoka+One&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("./breakpoints.css");
+@import url("./variables.css");
+* {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    box-sizing: border-box;
+}
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--darkLighter);
+}
+html,
+body {
+    padding: 0;
+    margin: 0;
+    z-index: 0;
+    font-family: "Roboto Mono", monosp;
+    color: #fff;
+}
+body {
+    
+    background-color: #1e1f26;
+    font-family: var(--ffFredoka);
+    font-weight: 300;
+    overflow-x: hidden;
+}
+h1 {
+    color: #fff;
+    margin: 0;
+    font-weight: 500;
+    font-size: 4rem;
+    line-height: 4rem;
+    position: relative;
+}
+h2 {
+    font-size: 3rem;
+    line-height: 3rem;
+}
+li {
+    list-style: none;
+    display: inline;
+}
+section {
+    width: 100%;
+    min-height: 100vh;
+}
+.white {
+    color: var(--whiteColor);
+}
+body.overlay {
+    overflow: hidden;
+}
+body.overlay main {
+    filter: blur(1.2em);
+}
+.btn {
+    margin-right: 20px;
+    padding: 10px 20px;
+    border: 1px solid var(--skinColor);
+    color: var(--skinColor);
+    border-radius: 5px;
+}
+#particles-js {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul li {
+    padding: 5px 15px;
+}
+
+.opacity0 {
+    opacity: 0;
+}
+
+.pulse::after,
+.pulse::before {
+    content: "";
+    width: 90%;
+    height: 90%;
+    position: absolute;
+
+    background-color: var(--skinColorDark);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+
+.pulse span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ab-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.techs .tech span::before {
+    content: "";
+    width: 90%;
+    height: 90%;
+    position: absolute;
+
+    background-color: var(--skinColorDark);
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+
+@keyframes techPulse {
+    100% {
+        opacity: 0;
+        transform: scale(2.2);
+    }
+}
+.techs .tech span img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Animation */
+
+.tech-holder.active .tech-9,
+.tech-holder.active .tech-10,
+.tech-holder.active .tech-11,
+.tech-holder.active .tech-12 {
+    transition: all 0.3s 1s ease-in-out;
+}
+
+.projects .project {
+    display: flex;
+    justify-content: space-between;
+}
+
+.projects .project .pr-image .image-holder {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(196, 196, 196);
+}
+.projects .project .pr-image .image-holder .img {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(128, 128, 128);
+    position: relative;
+    z-index: 2;
+}
+.pr-image .image-holder .img span {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    background-color: var(--darkLighter);
+    border-radius: 5px;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--skinColor);
+    text-align: center;
+    padding: 7px 0;
+}
+.project {
+    padding-top: 3em;
+    margin-bottom: 100px;
+}
+.pr-details {
+    padding-left: 30px;
+}
+.pr-details h3 {
+    font-size: 1.7em;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.pr-details h3 span:hover {
+    color: var(--skinColor);
+}
+.pr-details .desc {
+    padding: 10px 20px;
+    background-color: var(--darkLighter);
+    font-size: 1em;
+    font-weight: 500;
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-bottom: 40px;
+}
+.pr-details ul {
+    margin-top: 20px;
+}
+.pr-details ul li {
+    margin-right: 5px;
+    padding: 5px;
+    color: #a3a3a3;
+}
+.pr-details ul:last-child li {
+    width: 30px;
+    display: inline-block;
+}
+.pr-details ul li a img {
+    max-width: 100%;
+}
