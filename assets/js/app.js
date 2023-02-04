@@ -1,7 +1,14 @@
+import "particles.js/particles";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import SplitType from "split-type";
+
+const particlesJS = window.particlesJS;
+
 // Load the particles.js library with a JSON configuration file
 // and pass a callback function to log a message when the configuration has loaded
 particlesJS.load("particles-js", "assets/particles.json", function () {
-    console.log("callback - particles.js config loaded");
+    // console.log("callback - particles.js config loaded");
 });
 
 // Register the ScrollTrigger plugin from GSAP
@@ -199,7 +206,6 @@ gsap.from(techHolder, {
         toggleClass: "active",
     },
 });
-
 
 /**
  *
