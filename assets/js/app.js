@@ -1,15 +1,15 @@
+import css from "../css/app.css";
+
 import "particles.js/particles";
+
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
 const particlesJS = window.particlesJS;
-
 // Load the particles.js library with a JSON configuration file
 // and pass a callback function to log a message when the configuration has loaded
-particlesJS.load("particles-js", "assets/particles.json", function () {
-    // console.log("callback - particles.js config loaded");
-});
+particlesJS.load("particles-js", "../assets/particles.json");
 
 // Register the ScrollTrigger plugin from GSAP
 gsap.registerPlugin(ScrollTrigger);
