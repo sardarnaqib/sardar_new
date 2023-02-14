@@ -4,7 +4,9 @@ import "particles.js/particles";
 
 import {
     dropHeightAnimation,
+    elasticAnimation,
     horizontalBounceEffect,
+    revealTextAnimation,
     scaleTextAnimation,
     scrollToggle,
     slideJoinAnimation,
@@ -66,6 +68,19 @@ window.onload = () => {
             '.slide-bg span[text-data="scale-text"]'
         );
         scaleTextAnimation(fullStack);
+
+        const textsToElastic = document.querySelectorAll(".elastic-animation");
+        textsToElastic.forEach((text) => {
+            elasticAnimation(text);
+        });
+
+        // Text Reveal animation
+        const revealTexts = document.querySelectorAll(".text-reveal-animation");
+        revealTexts.forEach((text, index) => {
+            setTimeout(() => {
+                revealTextAnimation(text);
+            }, index * 50);
+        });
 
         // Select the element with class "slide-bg" inside an element with class "profession"
         const profession = document.querySelector(".profession .slide-bg");

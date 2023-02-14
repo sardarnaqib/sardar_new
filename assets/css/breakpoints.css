@@ -467,7 +467,7 @@
         padding-left: 30px;
     }
 
-    .contact div p {
+    .contact div .contact-message {
         margin-bottom: 50px;
     }
     .contact div .btn {

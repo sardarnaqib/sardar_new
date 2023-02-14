@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import { Elastic } from "gsap/gsap-core";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
@@ -28,6 +29,47 @@ export const horizontalBounceEffect = (ele, fromWidth, toWidth) => {
         //     trigger: textEl,
         //     start: "bottom 90%",
         // },
+    });
+};
+
+export const elasticAnimation = (element) => {
+    let splitElement = new SplitType(element, { types: "words, chars" });
+    // let elements = element.querSelectorAll(".chars");
+    gsap.set(element, { perspective: 400 });
+
+    gsap.from(splitElement.chars, {
+        duration: 0.8,
+        opacity: 0,
+        scale: 0,
+        y: 80,
+        rotationX: 180,
+        transformOrigin: "0% 50% -50",
+        ease: "back",
+        stagger: 0.02,
+        scrollTrigger: {
+            trigger: element,
+            start: "bottom 90%",
+        },
+    });
+};
+
+export const revealTextAnimation = (text) => {
+    let splitText = new SplitType(text, { types: "lines" });
+    gsap.set(text, { perspective: 400 });
+    gsap.from(splitText.lines, {
+        duration: 0.8,
+        opacity: 0,
+        scale: 0,
+        y: 80,
+        rotationX: 180,
+        transformOrigin: "0% 50% -50",
+        ease: "back",
+        stagger: 0.1,
+        scrollTrigger: {
+            trigger: text,
+            start: "bottom 90%",
+        },
+        // onComplete: allDone,
     });
 };
 
