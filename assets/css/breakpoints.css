@@ -26,6 +26,15 @@
         justify-content: space-between;
         align-items: center;
     }
+    .fixed-nav .navbar .nav-logo {
+        width: 60px;
+        height: 60px;
+    }
+    .fixed-nav .navbar .nav-logo svg {
+        width: 100%;
+        height: 100%;
+    }
+
     .fixed-nav .navbar .nav .btn-links {
         display: none;
     }
@@ -135,25 +144,33 @@
     .intro-section .intro div:first-child .profession {
         display: flex;
         justify-content: center;
+        max-height: 36px;
     }
     .intro-section .intro div:first-child .profession .slide-bg {
-        display: flex;
+        display: inline-flex;
         justify-content: center;
+        width: 0px;
+        min-height: 20px;
+        line-height: 20px;
         background-color: var(--skinColor);
         padding: 8px 15px;
         border-radius: 5px;
         color: var(--darkColor);
         /* display: inline-block; */
-        min-height: 20px;
-        line-height: 20px;
     }
 
     .intro-section .intro div:first-child .profession span {
         font-size: 0.9em;
     }
-    .intro-section .intro div:first-child .profession .slide-bg > span {
+    .intro-section
+        .intro
+        div:first-child
+        .profession
+        .slide-bg
+        > span[text-data="scale-text"] {
         display: flex;
         justify-content: center;
+        visibility: hidden;
     }
     .intro-section .intro div:first-child .name {
         margin-top: 10px;
@@ -232,6 +249,15 @@
         width: 100%;
         height: 150px;
         overflow: hidden;
+    }
+    .about-section .about-work .sect p {
+        padding-left: 30px;
+        margin-top: 10px;
+    }
+    .about-section .about-work .sect ul li {
+        font-size: 1.3em;
+        font-weight: 400;
+        color: var(--skinColor);
     }
     .about-section .about-work .sect:hover {
         box-shadow: 0px 40px 100px 0px var(--darkColor);
@@ -412,10 +438,13 @@
         margin-bottom: 30px;
     }
     .projects-section .projects .project .pr-details h3 {
-        font-size: 18px;
+        font-size: 1.5em;
+    }
+    .projects-section .projects .project .pr-details h3 span a:hover {
+        color: var(--skinColor);
     }
     .projects-section .projects .project .pr-details .desc {
-        font-size: 0.8em;
+        font-size: 1em;
         margin: 0px;
     }
 
@@ -515,9 +544,7 @@
     .intro-section .intro .intro-small-text {
         text-align: left;
     }
-    section:not(.contact).section-title-holder {
-        justify-content: flex-start;
-    }
+
     .section-title {
         width: 100%;
     }
@@ -667,6 +694,6 @@
         margin-left: 30px;
     }
     .projects-section .projects .project div {
-        width: 40%;
+        width: 45%;
     }
 }
