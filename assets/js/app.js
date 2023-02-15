@@ -1,5 +1,6 @@
 import css from "../css/app.css";
-
+const images = require.context("../images/", false, /\.(png|jpe?g|svg)$/); // create a context for all png, jpg and svg files in images folder
+// use images as a function that takes a file name and returns a URL
 import "particles.js/particles";
 
 import {
@@ -12,14 +13,14 @@ import {
     slideJoinAnimation,
 } from "./gsap_animation";
 
-let logo = document.querySelector(".logo");
+// let logo = document.querySelector(".logo");
 window.onload = () => {
-    document.body.style.overflow = "hidden";
-    logo?.classList.add("animate");
+    // document.body.style.overflow = "hidden";
+    // logo?.classList.add("animate");
 
     setTimeout(() => {
-        logo.style.display = "none";
-        document.body.style.overflow = "";
+        // logo.style.display = "none";
+        // document.body.style.overflow = "";
         const particlesJS = window.particlesJS;
         // Load the particles.js library with a JSON configuration file
         // and pass a callback function to log a message when the configuration has loaded

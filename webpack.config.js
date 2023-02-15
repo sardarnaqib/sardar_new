@@ -2,18 +2,19 @@ const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 let config = {
     entry: "./assets/js/app.js",
     output: {
-        path: path.resolve("./dist"),
-        filename: "bundle.js",
+        path: path.resolve(__dirname, "build"), // specify the output directory
+        filename: "bundle.js", // specify the output filename for the main bundle
+        assetModuleFilename: "images/[hash][ext][query]", // specify the output filename pattern for the asset modules
     },
     optimization: {
         minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
-        minimize: false,
+        minimize: true,
     },
-    // plugins: [require("autoprefixer")({})],
 
     module: {
         rules: [
@@ -33,17 +34,19 @@ let config = {
                 test: /\.css$/,
                 use: [],
             },
+            {
+                test: /\.html$/i,
+                loader: "html-loader",
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                type: "asset/resource", // use asset/resource instead of asset/inline
+                // generator: {
+                //     filename: "images/[name][ext][query]", // specify the output filename pattern for the image files
+                // },
+            },
         ],
     },
-    // plugins: [].concat(
-    //     devMode
-    //         ? []
-    //         : [
-    //               new MiniCssExtractPlugin({
-    //                   filename: "[name].css",
-    //               }),
-    //           ]
-    // ),
 };
 
 // module.exports = config;
@@ -67,6 +70,10 @@ module.exports = (env, argv) => {
             new MiniCssExtractPlugin({
                 filename: "[name].css",
             }),
+            new HtmlWebpackPlugin({
+                template: "./index.html", // specify the template file for the HTML file
+                filename: "index.html", // specify the output filename for the HTML file
+            }), // use the HtmlWebpackPlugin to process and inject the HTML file
         ];
     }
     return config;
