@@ -13,14 +13,14 @@ import {
     slideJoinAnimation,
 } from "./gsap_animation";
 
-// let logo = document.querySelector(".logo");
+let logo = document.querySelector(".logo");
 window.onload = () => {
-    // document.body.style.overflow = "hidden";
-    // logo?.classList.add("animate");
+    document.body.style.overflow = "hidden";
+    logo?.classList.add("animate");
 
     setTimeout(() => {
-        // logo.style.display = "none";
-        // document.body.style.overflow = "";
+        logo.style.display = "none";
+        document.body.style.overflow = "";
         const particlesJS = window.particlesJS;
         // Load the particles.js library with a JSON configuration file
         // and pass a callback function to log a message when the configuration has loaded
